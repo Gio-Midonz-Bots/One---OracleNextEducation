@@ -30,5 +30,18 @@ function limparcaixa(){
     amigo.value = '';
 }
 function sortearAmigo(){
-    
+    if (nomeDeAmigos.length === 0) {
+        alert('Por favor, adicione pelo menos um amigo antes de sortear.');
+        return; // Interrompe a execução da função
+    }
+
+    // Gera um índice aleatório
+    let indiceSorteado = Math.floor(Math.random() * nomeDeAmigos.length);
+
+    // Obtém o nome sorteado
+    let amigoSorteado = nomeDeAmigos[indiceSorteado];
+
+    // Exibe o resultado na tela
+    let resultadoElemento = document.getElementById('resultado');
+    resultadoElemento.innerHTML = `<li>Amigo sorteado: ${amigoSorteado}</li>`;
 }
