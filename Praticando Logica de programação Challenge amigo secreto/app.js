@@ -9,16 +9,26 @@ function adicionarAmigo(){
     if(amigo == ''){
         alert('Por favor, insira um nome.');
     }else{
-        nomeDeAmigos.push()
+        nomeDeAmigos.push(amigo)
         limparcaixa();
+        exibirListaNaTela(); // Exibe a lista atualizada na tela
     }
 }
 
-function exibirTextoNaTela(){
-    
-}
+function exibirListaNaTela() {
+    let listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = ''; // Limpa a lista antes de exibir
 
+    nomeDeAmigos.forEach(function(amigo) {
+        let itemLista = document.createElement('li');
+        itemLista.textContent = amigo;
+        listaAmigos.appendChild(itemLista);
+    });
+}
 function limparcaixa(){
     amigo = document.querySelector('.input-name');
     amigo.value = '';
+}
+function sortearAmigo(){
+    
 }
